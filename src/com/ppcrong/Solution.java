@@ -2,6 +2,7 @@ package com.ppcrong;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Solution {
@@ -35,4 +36,25 @@ public class Solution {
         }
         return sum;
     }
+
+    // Complete the sockMerchant function below.
+    static int sockMerchant(int n, int[] ar) {
+
+        // key: color, value: num of socks
+        HashMap<Integer, Integer> sockMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            if (sockMap.containsKey(ar[i])) {
+                sockMap.put(ar[i], sockMap.get(ar[i]) + 1);
+            } else {
+                sockMap.put(ar[i], 1);
+            }
+        }
+
+        int numOfPairs = 0;
+        for (Integer i : sockMap.values()) {
+            numOfPairs += i / 2;
+        }
+        return numOfPairs;
+    }
+
 }
