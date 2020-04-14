@@ -1,6 +1,7 @@
 package com.ppcrong;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
@@ -23,5 +24,15 @@ public class Solution {
         result.add(pointAlice);
         result.add(pointBob);
         return result;
+    }
+
+    // Complete the aVeryBigSum function below.
+    static long aVeryBigSum(long[] ar) {
+
+        long sum = 0;
+        for (int i = 0; i < ar.length; i++) {
+            sum += ar[i];
+        }
+        return sum;
     }
 }
