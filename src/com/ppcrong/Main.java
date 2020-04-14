@@ -14,7 +14,8 @@ public class Main {
 
 //        compareTheTriplets();
 //        aVeryBigSum();
-        sockMerchant();
+//        sockMerchant();
+        countingValleys();
     }
 
     // https://www.hackerrank.com/challenges/compare-the-triplets/problem
@@ -74,7 +75,7 @@ public class Main {
         scanner.close();
     }
 
-    // https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
+    // https://www.hackerrank.com/challenges/sock-merchant/problem
     private static void sockMerchant() throws IOException {
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -93,6 +94,26 @@ public class Main {
         }
 
         int result = new Solution().sockMerchant(n, ar);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+
+    // https://www.hackerrank.com/challenges/counting-valleys/problem
+    private static void countingValleys() throws IOException {
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        String s = scanner.nextLine();
+
+        int result = new Solution().countingValleys(n, s);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

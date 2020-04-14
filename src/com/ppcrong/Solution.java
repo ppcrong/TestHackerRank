@@ -57,4 +57,28 @@ public class Solution {
         return numOfPairs;
     }
 
+    // Complete the countingValleys function below.
+    static int countingValleys(int n, String s) {
+
+        int currentStep = 0;
+        int sumValley = 0;
+        char[] arrayChar = s.toCharArray();
+        for (int i = 0; i < n; i++) {
+            int lastStep = currentStep;
+            switch (arrayChar[i]) {
+                case 'U':
+                    currentStep++;
+                    break;
+                case 'D':
+                    currentStep--;
+                    break;
+                default:
+                    break;
+            }
+            if (i != 0 && currentStep == 0 && lastStep < 0) {
+                sumValley++;
+            }
+        }
+        return sumValley;
+    }
 }
