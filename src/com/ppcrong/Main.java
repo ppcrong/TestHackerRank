@@ -124,6 +124,7 @@ public class Main {
         scanner.close();
     }
 
+    // https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem
     private static void jumpingOnClouds() throws IOException {
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
