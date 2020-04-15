@@ -8,7 +8,7 @@ import java.util.List;
 public class Solution {
 
     // Complete the compareTriplets function below.
-    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
 
         int pointAlice = 0;
         int pointBob = 0;
@@ -28,7 +28,7 @@ public class Solution {
     }
 
     // Complete the aVeryBigSum function below.
-    static long aVeryBigSum(long[] ar) {
+    public static long aVeryBigSum(long[] ar) {
 
         long sum = 0;
         for (int i = 0; i < ar.length; i++) {
@@ -38,7 +38,7 @@ public class Solution {
     }
 
     // Complete the sockMerchant function below.
-    static int sockMerchant(int n, int[] ar) {
+    public static int sockMerchant(int n, int[] ar) {
 
         // key: color, value: num of socks
         HashMap<Integer, Integer> sockMap = new HashMap<>();
@@ -58,7 +58,7 @@ public class Solution {
     }
 
     // Complete the countingValleys function below.
-    static int countingValleys(int n, String s) {
+    public static int countingValleys(int n, String s) {
 
         int currentStep = 0;
         int sumValley = 0;
@@ -80,5 +80,29 @@ public class Solution {
             }
         }
         return sumValley;
+    }
+
+    // Complete the jumpingOnClouds function below.
+    public static int jumpingOnClouds(int[] c) {
+
+        int jumps = 0;
+        if (c.length == 2) {
+            return 1;
+        }
+
+        for (int i = 0; i < c.length - 1; i++) {
+
+            if (i != 0) {
+                jumps++;
+            }
+
+            if (c[i + 1] == 1 || (i < c.length - 2 && c[i + 2] == 0)) {
+                i++; // ignore next cloud, go to 3rd cloud directly
+            }
+        }
+        jumps++; // For the last step
+
+        System.out.println(jumps);
+        return jumps;
     }
 }
